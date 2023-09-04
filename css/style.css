@@ -1,0 +1,561 @@
+@font-face {
+  font-family: "MICEGothic Bold";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2206-01@1.0/MICEGothic Bold.woff2")
+    format("woff2");
+  font-weight: 700;
+  font-style: normal;
+}
+@font-face {
+  font-family: "NanumSquareRound";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_two@1.0/NanumSquareRound.woff")
+    format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+* {
+  font-family: "MICEGothic Bold";
+  box-sizing: border-box;
+}
+body {
+  background: #fff;
+  font-size: 14px;
+  color: #000;
+  margin: 0;
+  padding: 0;
+}
+ul,
+li {
+  list-style: none;
+}
+a {
+  color: #000;
+  text-decoration: none;
+}
+/* 스와이퍼 */
+html,
+body {
+  position: relative;
+  max-width: 100%;
+  height: 100%;
+  font-size: 13px;
+}
+.swiper {
+  width: 100%;
+  height: 100%;
+}
+.swiper-slide {
+  background-position: center;
+  background-size: cover;
+}
+.swiper-slide img {
+  display: block;
+  width: 100%;
+  object-fit: cover;
+  object-position: center;
+  animation: slide 7s;
+}
+@keyframes slide {
+  0% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+/* common */
+.inner {
+  width: 1200px;
+  margin: auto;
+}
+/* header */
+header {
+  width: 100%;
+  display: block;
+  height: 100px;
+  position: fixed;
+  z-index: 111;
+}
+header .header01 {
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: end;
+  background-color: #2c2f36;
+}
+header .header01 a img {
+  width: 25px;
+  height: 25px;
+  margin-right: 5px;
+}
+header .header02 {
+  width: 100%;
+  height: 100px;
+  background-color: transparent;
+  position: relative;
+}
+header .header02 .inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100%;
+}
+header .header02 .header_logo {
+  width: 23%;
+  height: 58px;
+  background-image: url(../img/logo.png);
+  background-position: 0 0px;
+  background-repeat: no-repeat;
+}
+header .header02 nav {
+  width: 70%;
+  height: 100%;
+}
+header .header02 nav ul {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+header .header02 nav ul li {
+  margin-left: -5%;
+}
+header .header02 nav ul li a {
+  font-size: 20px;
+  color: #fff;
+  position: relative;
+}
+header .header02 nav ul li a:after {
+  content: "";
+  position: absolute;
+  top: 270%;
+  width: 120%;
+  height: 3px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #006eaf;
+  z-index: 1;
+  transition: 0.3s;
+  opacity: 0;
+}
+header .header02 nav ul li:hover a:after {
+  opacity: 1;
+}
+header .header02 nav ul li a.hambuger {
+  width: 46px;
+  height: 34px;
+  position: relative;
+  border: 1px solid transparent;
+}
+header .header02 nav ul li a.hambuger span {
+  position: absolute;
+  width: 46px;
+  height: 2px;
+  background-color: #fff;
+}
+header .header02 nav ul li a.hambuger span:nth-child(1) {
+  top: 0;
+  left: 0;
+}
+header .header02 nav ul li a.hambuger span:nth-child(2) {
+  top: 50%;
+  transform: translateY(-50%);
+  left: 0;
+}
+header .header02 nav ul li a.hambuger span:nth-child(3) {
+  bottom: 0;
+  left: 0;
+}
+header .header02 .sub_menu {
+  position: absolute;
+  background-color: #f6f6f6;
+  width: 100%;
+  height: 70px;
+  left: 50%;
+  transform: translateX(-50%);
+  line-height: 70px;
+  display: none;
+}
+header .header02 .sub_menu.sub02 ul li {
+  width: 300px;
+}
+header .header02 .sub_menu ul {
+  display: flex;
+  justify-content: center;
+  margin: auto;
+  width: 900px;
+}
+header .header02 .sub_menu ul li {
+  width: 100px;
+  text-align: center;
+  margin: auto;
+}
+header .header02 .sub_menu ul li a {
+  width: 100%;
+  font-family: "NanumSquareRound";
+  font-size: 17px;
+  font-weight: normal;
+}
+header .header02 .sub_menu ul li a:hover {
+  text-decoration: underline;
+}
+/* section */
+section .back_slide {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+/* 스와이퍼 버튼 */
+.swiper-button-prev:after,
+.swiper-rtl .swiper-button-next:after {
+  content: url(../img/visuBtn_prev.png);
+  position: absolute;
+  left: 300%;
+}
+.swiper-button-next:after,
+.swiper-rtl .swiper-button-prev:after {
+  content: url(../img/visuBtn_next.png);
+  position: absolute;
+  right: 300%;
+}
+section .back_slide .swiper-slide img {
+  height: 905px;
+  object-position: center;
+  object-fit: cover;
+}
+section .back_slide h1.main_text {
+  position: absolute;
+  left: 50%;
+  top: 30%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+  color: #fff;
+  text-align: center;
+  letter-spacing: 1px;
+  font-size: 36px;
+  line-height: 60px;
+}
+section .back_slide h1.main_text > span {
+  font-style: italic;
+}
+section .contents_box {
+  padding: 0;
+  position: absolute;
+  bottom: -2px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1;
+}
+section .contents_box .con_flex {
+  display: flex;
+  padding: 0;
+}
+section .contents_box .con_flex .con_left {
+  display: flex;
+  flex: 2;
+  padding: 0;
+}
+section .contents_box .con_flex .con_left .notice {
+  padding: 0;
+  margin: 0;
+}
+section .contents_box .con_flex .con_left .notice .box {
+  max-height: 245px;
+  max-width: 100%;
+  padding: 0;
+  margin: 0;
+  border: 1px solid #aaa;
+  background-color: #fff;
+  height: 245px;
+}
+section .contents_box .con_flex .con_left .notice:last-child .box {
+  background-color: #f2f2f2;
+}
+section .box .box_title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0% 8%;
+  margin: 5.5% 0 3% 0;
+}
+section .box .box_title h1 {
+  font-size: 22px;
+}
+section .box .box_title .more_btn {
+  width: 18px;
+  height: 18px;
+  position: relative;
+  cursor: pointer;
+}
+section .box .box_title .more_btn span {
+  position: absolute;
+  width: 18px;
+  height: 2px;
+  background-color: #c5c5c5;
+}
+section .box .box_title .more_btn span:first-child {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+section .box .box_title .more_btn span:last-child {
+  left: 0%;
+  top: 45%;
+  transform: rotate(90deg);
+}
+section .box .box_con {
+  display: block;
+}
+section .box .box_con ul {
+  margin: 0 7%;
+  padding: 0;
+  border-top: 1px solid #dedede;
+}
+section .box .box_con ul li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 3% 0;
+}
+section .box .box_con ul li a {
+  font-size: 14px;
+  font-family: "NanumSquareRound";
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  display: block;
+  width: 80%;
+  text-align: start;
+  color: #666;
+  max-width: 100%;
+  font-weight: 100;
+}
+section .box .box_con ul li a:hover {
+  text-decoration: underline;
+}
+section .contents_box .con_flex .con_left .notice .box .box_con ul li span {
+  font-size: 13px;
+  color: #b4b4b4;
+  font-family: "NanumSquareRound";
+}
+section .contents_box .con_flex .con_left .notice .row {
+  width: 400px;
+  margin: auto;
+}
+section .contents_box .con_flex .con_left .notice .row .icons {
+  padding: 10px;
+  margin: 0;
+  height: 109px;
+  background-color: #abdfff;
+  border: 1px solid #aaa;
+}
+section .contents_box .con_flex .con_left .notice .row .icons a p {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  height: 100%;
+  margin: auto;
+}
+/* 온라인 MICE 연수원 */
+section .contents_box .con_flex .con_left .notice .row .icons a p span.icon_1 {
+  background: url(../img/sIcon_2.png) no-repeat 0px 50%;
+  padding: 15%;
+}
+/* MICE 지식재산 콘텐츠 */
+section .contents_box .con_flex .con_left .notice .row .icons a p span.icon_2 {
+  background: url(../img/sIcon_4.png) no-repeat 0px 50%;
+  padding: 15%;
+}
+/* MICE 통합 컨시어지 데스크 운영 */
+section .contents_box .con_flex .con_left .notice .row .icons a p span.icon_3 {
+  background: url(../img/sIcon_1.png) no-repeat 0px 50%;
+  padding: 15%;
+}
+/* 공공기관 입찰용 신용평가 서비스 */
+section .contents_box .con_flex .con_left .notice .row .icons a p span.icon_4 {
+  background: url(../img/sIcon_5.png) no-repeat 0px 50%;
+  padding: 15%;
+}
+/* 협회 회원 가입 */
+section .contents_box .con_flex .con_left .notice .row .icons a p span.icon_5 {
+  background: url(../img/sIcon_7.png) no-repeat 0px 50%;
+  padding: 15%;
+}
+/* Korea MICE Association Profile */
+section .contents_box .con_flex .con_left .notice .row .icons a p span.icon_6 {
+  background: url(../img/sIcon_8.png) no-repeat 0px 50%;
+  padding: 15%;
+}
+/* 관광공제회 */
+section .contents_box .con_flex .con_left .notice .row .icons a p span.icon_7 {
+  background: url(../img/sIcon_3.png) no-repeat 0px 50%;
+  padding: 15%;
+}
+/* The MICE Plus */
+section .contents_box .con_flex .con_left .notice .row .icons a p span.icon_8 {
+  background: url(../img/sIcon_9.png) no-repeat 0px 50%;
+  padding: 15%;
+}
+section
+  .contents_box
+  .con_flex
+  .con_left
+  .notice
+  .row
+  .icons
+  a
+  p
+  span:nth-child(1) {
+  flex: 1;
+  background-position: center;
+}
+section .contents_box .con_flex .con_left .notice .row .icons a p span {
+  text-align: left;
+  color: #1c1b20;
+  font-size: 14px;
+  /* min-width: 130px; */
+  background-size: 55px !important;
+  word-break: keep-all;
+  word-wrap: break-word;
+  padding: 7%;
+  font-weight: normal;
+  width: 70%;
+  height: 100%;
+  line-height: 23px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "NanumSquareRound";
+}
+section .contents_box .con_flex .con_right {
+  flex: 1;
+  width: 398px;
+  height: 465px;
+  padding: 0;
+  border: 1px solid #aaa;
+}
+section .contents_box .con_flex .con_right .single-item {
+  cursor: pointer;
+}
+section .contents_box .con_flex .con_right .single-item button {
+  display: none !important;
+}
+/* new section */
+section .news_section {
+  margin-top: 2%;
+}
+section .news_section h2 {
+  font-size: 30px;
+  padding-bottom: 2%;
+  border-bottom: 2px solid #1c1b20;
+  color: #1c1b20;
+}
+section .news_section .col-4 {
+  padding: 0 2%;
+  margin: 0;
+}
+section .news_section .col-4:nth-child(2) {
+  padding-left: 0;
+}
+section .news_section .col-4:nth-child(4) {
+  padding-right: 0;
+}
+section .news_section .box .box_title {
+  padding: 0;
+}
+section .news_section .box .box_con ul {
+  margin: 0;
+}
+section .news_section .box .box_con ul li a {
+  color: #666;
+}
+section .news_section .box .box_con ul li span {
+  color: #b4b4b4;
+  font-weight: 100;
+}
+footer {
+  max-width: 100%;
+}
+footer .footer {
+  background-color: #1c1b20;
+  padding: 1.5% 0;
+  margin-top: 2.5%;
+  max-width: 100%;
+}
+footer .footer ul {
+  display: block;
+  padding: 0;
+}
+footer .footer a {
+  color: #fff;
+  font-family: "NanumSquareRound";
+  font-weight: normal;
+  font-size: 15px;
+  color: #7d7c7e;
+  width: 70%;
+  padding: 3% 0;
+  display: block;
+}
+footer .footer ul li a:hover {
+  text-decoration: underline;
+}
+footer .footer a h5 {
+  font-size: 18px;
+  color: #fff;
+  font-family: "NanumSquareRound";
+}
+footer .footer_bottom {
+  background-color: #1c1b20;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 2% 0;
+  max-width: 100%;
+  margin: auto;
+}
+footer .footer_bottom .footer_logo {
+  flex: 1;
+}
+footer .footer_bottom .footer_copy {
+  display: block;
+  flex: 4;
+}
+footer .footer_bottom .footer_copy .copy_top a {
+  font-family: "NanumSquareRound";
+}
+footer .footer_bottom .footer_copy .copy_top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 37%;
+  margin-bottom: 4%;
+  font-size: 15px;
+}
+footer .footer_bottom .footer_copy .copy_bottom p {
+  font-size: 14px;
+  color: #7d7c7e;
+  line-height: 25px;
+  font-family: "NanumSquareRound";
+}
+footer .footer_bottom a {
+  color: #fff;
+}
+.vr {
+  filter: invert(10);
+}
+footer .footer_site {
+  padding: 0;
+  margin: 0;
+  width: 200px;
+}
+footer .footer_site select.form-select {
+  border: 1px solid red;
+  height: 40px;
+  border-radius: 0;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  display: block;
+  margin-bottom: 3%;
+  background-color: #1c1b20;
+  color: #7d7c7e;
+  font-family: "NanumSquareRound";
+  font-size: 13px;
+}
